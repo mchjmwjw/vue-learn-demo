@@ -1,0 +1,40 @@
+<meta charset="utf-8">
+<script src="../vue.js"></script>
+
+<div id="login">
+    <form action="" id="login-form">
+        <label for="friendname">朋友大名</label>
+        <input type="text" id="friendname" placehold="來吧" v-model="name">
+        <br><br>
+        <label for="friendpass">你的串</label>
+        <input type="password" id="friendpass" placehold="寫吧" v-model="password">
+        <br>
+        <haha v-bind:password='password'></haha>
+        <p>{{ password }}</p>
+    </form>
+</div>
+
+
+<script>
+    //注册
+    var Haha = {
+        props: ['password'],  
+        template: "<h2>{{ password1 }}</h2>",
+        computed: {
+            password1: function() {
+                return  this.password + '(哈哈哈)';
+            }
+        }
+    };
+    //初始化
+    new Vue({
+        el: '#login',
+        components:{
+            'haha': Haha
+        },
+        data: {
+            name: 'Jon Snow',
+            password: 'know nothing'
+        }
+    })
+</script>

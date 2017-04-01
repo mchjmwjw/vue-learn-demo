@@ -1,0 +1,24 @@
+<meta charset='utf-8' />
+<script src="../vue.js"></script>
+
+<div id="example">
+    <button v-on:click="greet">Greet</button>
+</div>
+
+<script type="text/javascript">
+    var vm = new Vue({
+        el: '#example',
+        data: {
+            name: 'Vue.js'
+        },
+        methods: {
+            greet: function(event) {
+                if(event) {
+                    alert("Hello " + this.name + '!');
+                }
+                alert(event.target.tagName);
+            }
+        }
+    });
+    vm.greet();
+</script>

@@ -1,0 +1,15 @@
+<script src='../vue.js'></script>
+
+<div id='app'>
+    <p v-show="ok">nihao</p>
+    <h1 v-show="!ok">buhao</h1>
+</div>
+
+<script>
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            ok: false
+        }
+    })
+</script>

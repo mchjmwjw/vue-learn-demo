@@ -1,0 +1,29 @@
+<meta charset='utf-8' />
+<script src="../vue.js"></script>
+
+<div id="example">
+    a = {{ a }}, b = {{ b }}, c = {{ d }}
+</div>
+
+<script type="text/javascript">
+    var vm = new Vue({
+        el: '#example',
+        data: {
+            a: 1,
+            d: 100
+        },
+        computed: {                 //计算属性
+            b: function() {     // 默认是getter
+                return this.a + 1;
+            },
+            c: {
+                get: function(val) {
+                    return this.d;
+                },
+                set: function(newValue) {
+                    this.d = newValue;
+                }
+            }
+        }
+    });
+</script>

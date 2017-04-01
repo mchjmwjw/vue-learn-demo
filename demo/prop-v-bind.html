@@ -1,0 +1,24 @@
+<meta charset='utf-8' />
+<script src="../vue.js"></script>
+
+<div id='app'>
+    <input type="text" v-model="parentMsg">
+    <br>
+    <child v-bind:my-message="parentMsg"></child>
+</div>
+
+<script type="text/javascript">
+    var Child = {
+        template: "<p>{{ myMessage }}</p>",
+        props: ['myMessage']
+    }
+    new Vue({
+        el: 'div',
+        // data: {
+        //     parentMsg: ''
+        // },
+        components: {
+            'child': Child
+        }
+    });
+</script>

@@ -1,0 +1,15 @@
+<script src="../vue.js"></script>
+
+<div id="app">
+    <p>{{ message }}</p>
+    <input v-model="message" />
+</div>
+
+<script>
+var app = new Vue({
+    el: '#app',
+    data: {
+        message: 'Hello Vue.js!'
+    }
+})
+</script>

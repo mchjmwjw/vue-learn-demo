@@ -1,0 +1,21 @@
+<script src="../vue.js"></script>
+<div id="app">
+    <ul>
+        <li v-for="tod in tods">
+            {{ tod.text }}
+        </li>
+    </ul>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            tods: [
+                {text: 'Learn Javascript'},
+                {text: 'Learn xxx'},
+                {text: 'Learn bbb'}
+            ]
+        }
+    })
+</script>

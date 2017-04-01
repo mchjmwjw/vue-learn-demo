@@ -1,0 +1,17 @@
+<meta charset='utf-8' />
+<script src="../vue.js"></script>
+
+<div id='app'>
+    <child message="hello!"></child>
+</div>
+
+<script type="text/javascript">
+    Vue.component('child', {
+        props: ['message'],
+        template: '<span>{{ message }}</span>'
+    });
+
+    new Vue({
+        el: '#app'
+    });
+</script>

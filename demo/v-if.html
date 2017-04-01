@@ -1,0 +1,16 @@
+<script src="../vue.js"></script>
+
+<div id='app'>
+    <h2 v-if="ok">Yes</h2>
+    <h2 v-else>No</h2>
+    <a href="javascript:void(0);" disabled="true">xxx</a>
+</div>
+
+<script>
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            ok: true
+        }
+    })
+</script>

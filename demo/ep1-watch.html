@@ -1,0 +1,29 @@
+<meta charset='utf-8' />
+<script src="../vue.js"></script>
+
+<div id='app'>
+    <p>
+        {{ message }}
+    </p>
+    <button v-on:click="justclick">xxx</button>
+</div>
+
+<script>
+    var data = {
+        message: '天杀的',
+        name: 'xx'
+    }
+    var vm = new Vue({
+        el: '#app',
+        data: data,
+        methods: {
+            justclick: function() {
+                data.message = '你妹的'+(new Date()).getSeconds()
+            }
+        }
+    })
+    vm.$watch('message', function(newVal, oldVal) {
+        alert('You cant change without scruple')
+    })
+
+</script>

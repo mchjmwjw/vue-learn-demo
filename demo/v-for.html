@@ -1,0 +1,38 @@
+<meta charset="utf-8" />
+<script src='../vue.js'></script>
+
+<ul id="app">
+    <li v-for="a in items">
+        {{ parentMessage }}--{{ a.message }}--{{ $index }}
+    </li>
+</ul>
+
+<ul id="app2">
+    <li v-for="(index, a) in items">
+        {{$index}} -- {{a.message}}
+    </li>
+</ul>
+
+<script>
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            parentMessage: '地球人',
+            items: [
+                {message: '中国人'},
+                {message: '蒙古人'},
+                {message: '不是人'}
+            ]
+        }
+    })
+    var vm2 = new Vue({
+        el: '#app2',
+        data: {
+            items:[
+                {message: '雷克萨斯'},
+                {message: '克莱斯勒'},
+                {message: '捷豹'}
+            ]
+        }
+    })
+</script>

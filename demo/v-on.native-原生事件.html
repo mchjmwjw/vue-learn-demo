@@ -1,0 +1,32 @@
+<meta charset="utf-8">
+<script src="../vue.js"></script>
+
+<div id="app">
+    <my-component @click="doSomething"></my-component>
+</div>
+
+<script>
+    var myComponent = {
+        template: '<button v-on:click="doChild">{{ num }}</button>',
+        data: function() {
+            return { num: 0 };
+        },
+        methods: {
+            doChild: function() {
+                this.num ++;
+            }
+        }
+    }
+    new Vue({
+        el: '#app',
+        components: {
+            'my-component': myComponent
+        },
+        methods: {
+            doSomething: function() {
+                alert('haha');
+            }
+        }
+    })
+
+</script>

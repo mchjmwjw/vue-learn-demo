@@ -1,0 +1,24 @@
+<script src='../vue.js'></script>
+
+<div id='app' v-bind:class="[classA, classB]">
+</div>
+<div id='app2' v-bind:class="[classA, isB ? classB : '']">
+</div>
+
+<script>
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            classA: 'class-a',
+            classB: 'class-d'
+        }
+    })
+    var vm2 = new Vue({
+        el: '#app2',
+        data: {
+            classA: 'class-a',
+            classB: 'class-d',
+            isB: false
+        }
+    })
+</script>
